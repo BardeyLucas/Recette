@@ -1,0 +1,29 @@
+@use "functions.scss" as *;
+@use "variables.scss" as *;
+@use "sass:math";
+
+@mixin title {
+    font-size: rem(32);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 10px;
+}
+
+@mixin small-only {
+    @media (max-width: $smallbeakpoint) {
+        @content;
+    }
+}
+
+// @mixin medium-only {
+//     @media (min-width: math.add($smallbeakpoint, 1)) and (max-width: math.add($largebeakpoint, -1)) {
+//         @content;
+//     }
+// }
+
+@mixin large-only {
+    @media (min-width: $largebeakpoint) {
+        @content;
+    }
+}
